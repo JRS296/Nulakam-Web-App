@@ -107,18 +107,22 @@ export default function Account() {
         if (user.email == '') alert("Add Email Bhai");
         else if (user.pwd == '') alert("Add Password Bhai");
         else {
-            console.log("test");
             try {
                 const data = await client.post(`/user/login`, user);
-                // console.log(data);
+                // console.log(data.data.token);
                 // console.log("test");
-                alert('User successfully Signed In');
-                setUserEmail('');
-                setUserFname('');
-                setUserLname('');
-                setUserPwd('');
-                localStorage.setItem("token", data.data.token);
-                navigate('/');
+                if (data.data.token === undefined) {
+                    alert('Incorrect Password or Email');
+                    return;
+                } else {
+                    alert('User successfully Signed In');
+                    setUserEmail('');
+                    setUserFname('');
+                    setUserLname('');
+                    setUserPwd('');
+                    localStorage.setItem("token", data.data.token);
+                    navigate('/');
+                }
             } catch (error) {
                 console.log(error);
             }

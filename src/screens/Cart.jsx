@@ -42,7 +42,7 @@ export default function Cart() {
                         </center>
                     </div>
                     <div className="pro-cat">
-                        <h2>My Cart</h2>
+                        <h2>Options</h2>
                         <div className="border-side"></div>
                     </div>
 

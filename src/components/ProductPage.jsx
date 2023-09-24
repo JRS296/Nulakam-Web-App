@@ -29,10 +29,9 @@ export default function ProductsPage({ title, tagdata, querydata }) {
             setPosts(posts);
             setTotalPostCount(postCount);
         } else if (tagdata === 'cart') {
-            const test = await getCart();
-            console.log(test.cart[0]);
-            setPosts([]);
-            // setTotalPostCount(postCount);
+            const { id, cart } = await getCart();
+            setPosts(cart);
+            setTotalPostCount(cart.length);
         } else if (querydata) {
             const { error, posts, postCount } = await searchPosts(querydata, pageNo, POST_LIMIT);
             setPosts(posts);
@@ -77,7 +76,7 @@ export default function ProductsPage({ title, tagdata, querydata }) {
                         {posts.length ? posts.map(post => {
                             return (<Book key={post.id} post={post} />);
                         })
-                            : <h1 style={{color: "227, 85, 8", textAlign: 'center', marginTop: 150 }} > Unavailable </h1>
+                            : <h1 style={{ color: "227, 85, 8", textAlign: 'center', marginTop: 150 }} > Cart is Empty </h1>
                         }
                     </div>
                 </div>

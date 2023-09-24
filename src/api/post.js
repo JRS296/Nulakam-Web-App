@@ -30,9 +30,9 @@ export const getCart = async () => {
     }
 };
 
-export const updateBookAndUserCart = async (bookTitle) => {
+export const updateBookAndUserCart = async (title) => {
     try {
-        const { data } = await client.post(`/book/updateCartAndBooks`,{bookTitle}, {
+        const { data } = await client.post(`/user/updateCartAndBooks?title=${title}`,title, {
             headers: {
                 'token': localStorage.getItem("token"),
             }
@@ -41,7 +41,7 @@ export const updateBookAndUserCart = async (bookTitle) => {
     } catch (error) {
         const { response } = error;
         if (response?.data) {
-            return response.data
+            return response.data;
         }
         return { error: error.message || error };
     }

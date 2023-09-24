@@ -11,7 +11,8 @@ export default function Book({post}) {
     const handleCartAndUser = async () => {
         if(!localStorage.getItem("token")) alert("User Not Logged In"); 
         else {
-            await updateBookAndUserCart(title);
+            const val = await updateBookAndUserCart(title);
+            // console.log(val);
             navigate('/cart');
         }
     }
