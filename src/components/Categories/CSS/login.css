@@ -1,0 +1,476 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
+
+.account *{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Kumbh Sans' sans-serif;
+}
+
+.account .body{
+    font: 16px/26px "Raleway", sans-serif;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.account .background{
+    background: url('../../../Images/category-pic.jpg');
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+	background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.account .left h1{
+    font-size: 60px;
+    color: rgb(227, 85, 8);
+    position: relative;
+    top: -60px;
+}
+
+.account .left button{
+    position: relative;
+    bottom: -30px;
+    transition: 500ms;
+    padding: 8px 24px;
+}
+
+.account .right button{
+    position: relative;
+    bottom: 10px;
+    transition: 500ms;
+    padding: 8px 24px;
+}
+
+.account .left button:hover, .account .right button:hover{
+    color: #cccccc;
+    border-color: #cccccc;
+    transition: 500ms;
+}
+
+.account .left h3{
+    position: relative;
+    bottom: -64px;
+    font-size: 16px;
+    color: rgb(227, 85, 8);
+}
+
+.account .right h3{
+    position: relative;
+    bottom: -24px;
+    font-size: 20px;
+    color: rgb(227, 85, 8);
+}
+
+.account .left p{
+    position: relative;
+    top: 35px;
+    font-size: 12px;
+    color: #cccccc;
+    padding: 15px 20px;
+}
+
+.account .right p{
+    position: relative;
+    top: -5px;
+    font-size: 12px;
+    color: #cccccc;
+    padding: 15px 20px;
+}
+
+.account .background .box{
+    background: rgba(47, 54, 64, 0.35);
+    backdrop-filter: blur(5px);
+    flex: 1 1 700px;
+    max-width: 700px;
+    min-height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    transition: all 500ms ease-in-out;
+}
+
+.account .terms-form, .login-form, .register-form, .account .form-hidden{
+    transition: all 500ms ease-in-out;
+}
+
+.account .background .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 54, 64, 0.35);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.account .background .box .left, .account .background .box .right{
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 500ms ease-in-out;
+}
+
+.account h3{
+    font-size: 20px;
+    color: rgb(251, 251, 251);
+    margin: 0 0 20px;
+}
+
+.account .reg-btn, .login-btn{
+    padding: 10px 30px;
+    background:  transparent;
+    color: rgb(227, 85, 8);
+    border: 1px solid rgb(227, 85, 8);
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.account .terms-form .login-btn{
+    border: none;
+    text-decoration: none;
+    font-size: 14px;
+    color: #555555;
+    transition: 500ms;
+    padding-bottom: 10px;
+}
+
+.account .register-form .login-btn{
+    border: none;
+    text-decoration: none;
+    font-size: 14px;
+    color: #555555;
+    transition: 500ms;
+    padding:0 0 10px 0;
+}
+
+.account .terms-form .login-btn:hover, .account .register-form .login-btn:hover{
+    color: rgb(227, 85, 8);
+    transition: 500ms;
+}
+
+.account .reg-btn:focus{
+    outline: none;
+}
+
+.account .login-btn:focus{
+    outline: none;
+}
+/*
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background: #cccccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+label{
+    color: #4c4c4c;
+    font-size: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+input[type="checkbox"]::after{
+    font-family: "FontAwesome";
+    content: "\f00c";
+    color: rgb(227, 85, 8);
+    font-weight: 900;
+    font-size: 12px;
+    outline: none;
+}
+
+input[type="checkbox"]:hover{
+    background: #b4b4b4;
+    outline: none;
+}
+
+input[type="checkbox"]:checked{
+    background: #cccccc;
+}
+
+input[type="checkbox"]:checked::after{
+    display: block;
+}
+*/
+
+.account .form{
+    position: absolute;
+    background: rgb(251, 251, 251);
+    height: 100%;
+    width: 50%;
+    right: 0;
+    top: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 500ms ease-in-out;
+    border-left: 1px solid #555;
+}
+
+.account .form .terms-form{
+    padding: 15px;
+}
+
+.account .slide1 .form{
+    right: 50%;
+    border-left: none;
+    border-right: 2px solid #555555;
+}
+
+.account .form h3{
+    font-size: 25px;
+    color: rgb(227, 85, 8);
+    margin-bottom: 30px;
+}
+
+.account .form-group{
+    margin-bottom: 10px;
+}
+
+.account .form-control{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    padding: 0;
+    background: transparent;
+}
+
+.account .form-control:focus{
+    outline: none;
+}
+
+.account .form label{
+    font-size: 14px;
+    color: #555555;
+    padding-left: 2px;
+}
+
+.account .submit-btn{
+    width: 100%;
+    height: 40px;
+    background: rgb(227, 85, 8);
+    border: none;
+    border-radius: 20px;
+    color: rgb(251, 251, 251);
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.account .submit-btn:hover{
+    background: transparent;
+    color: rgb(227, 85, 8);
+    border: 1px solid rgb(227, 85, 8);
+    transition: 500ms;
+}
+
+.account .submit-btn:focus, .account .reg-btn:focus{
+    outline: none;
+}
+
+.account .login-form, .account .register-form p{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.account .login-form, .account .register-form p a{
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    color: #555555;
+    transition: 500ms;
+}
+
+.account .login-form, .account .register-form p a:hover{
+    color: rgb(227, 85, 8);
+    transition: 500ms;
+}
+
+.account .link{
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    color: #555555;
+    transition: 500ms;
+    padding: 10px 10px;
+}
+
+.account .link:hover{
+    color: rgb(227, 85, 8);
+    transition: 500ms;
+}
+
+.account .form-hidden{
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.account .register-form h5{
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+.account .terms-form{
+    overflow: auto;
+    margin-right: 10px;
+}
+
+.account .terms-form h2{
+    font-size: 30px;
+    color: rgb(227, 85, 8);
+}
+
+.account .small{
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.account .terms-form h3{
+    margin-bottom: 2px;
+}
+
+.account .terms-form p{
+    font-size: 12px;
+}
+
+.account .terms-form h4{
+    color: #555555;
+}
+
+.account .home{
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+}
+
+.account .return-btn:hover{
+    background: rgba(7, 54, 64, 0.8);
+    transition: 200ms;
+}
+
+.account .return-btn{
+    position: relative;
+    background: rgba(47, 54, 64, 0.35);
+    backdrop-filter: blur(5px);
+    top: 50px;
+    font-size: 30px;
+    color: rgb(227, 85, 8);
+    padding: 8px 10px;
+    border: 2px solid rgb(227, 85, 8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 200ms;
+}
+
+::-webkit-scrollbar{
+	width: 6px;
+	background: rgba(50, 51, 63, 0.8);
+	transition: 300ms;
+}
+
+::-webkit-scrollbar:hover{
+	scrollbar-width: 4px;
+	transition: 300ms;
+}
+
+::-webkit-scrollbar-track{
+	box-shadow: inset 1px 1px rgba(47, 54, 64, 0.7);
+}
+
+::-webkit-scrollbar-thumb{
+	width: 6px;
+	background: rgb(227, 85, 8);
+}
+
+
+@media(max-width: 767px){
+    .background .box{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media(max-width: 767px){
+    .background .box .form{
+        position: relative;
+        right: auto;
+        top: auto;
+        height: auto;
+        width: 100%;
+    }
+    .box .slide1 .form{
+        right: auto;
+    }
+    .left h1{
+        display: none;
+        /*font-size: 60px;
+        color: rgb(227, 85, 8);
+        position: relative;
+        top: -60px;*/
+    }
+    
+    .left button{
+        position: relative;
+        bottom: 10px;
+        transition: 500ms;
+        padding: 8px 24px;
+    }
+    .left h3{
+        position: relative;
+        bottom: -24px;
+        font-size: 20px;
+        color: rgb(227, 85, 8);
+    }
+    .left p{
+        position: relative;
+        top: -5px;
+        font-size: 12px;
+        color: #cccccc;
+        padding: 15px 20px;
+    }
+    .home{
+        position: absolute;
+        right: 50%;
+        left: 50%;
+    }
+    .return-btn{
+        position: relative;
+        left: -22px;
+    }
+}
