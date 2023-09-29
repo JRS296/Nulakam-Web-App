@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://nulakam-web-app.vercel.app/">
+    <picture><img src="https://github.com/JRS296/Nulakam-API/assets/70965472/1c1d0eb1-9a23-4b01-b363-8dceaa7d772e"></picture>
+  </a>
+</p>
+&nbsp;
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/jrs296/Nulakam-Web-App?style=social">
+    <img alt="npm" src="https://img.shields.io/npm/v/npm">
+    <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fdijkstra-edu.github.io%2FDijkstra-Web%2F">
+    <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/jrs296/Nulakam-Web-App/master">
+    <img alt="GitHub" src="https://img.shields.io/github/license/jrs296/Nulakam-Web-App"> 
+    <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Up-yellow?logo=vercel">
+</p>
 
-## Available Scripts
+# Nulakam
+Welcome to Nūlakam - Where Stories Come to Life. At Nūlakam, we believe in the transformative power of words, the magic of storytelling, and the endless adventures that await within the pages of a book. Established with a deep love for literature and a passion for connecting readers with the finest literary treasures, we are more than just a bookstore; we are your gateway to a world of imagination and knowledge. Our journey began Nūlakam when a group of avid bookworms came together with a shared dream: to create a haven for book lovers of all ages and interests. Since then, we have been on a mission to curate a diverse collection of books that cater to every taste, from timeless classics to contemporary bestsellers, and from niche genres to popular series. But we are more than just a place to buy books. We are a community of readers, a space for literary exploration, and a source of inspiration for book enthusiasts. Our team of passionate bibliophiles is dedicated to providing personalized recommendations, hosting engaging book discussions, and fostering a love for reading in the hearts of our customers. Beyond our carefully selected books, we offer a warm and welcoming environment for you to browse, discover, and lose yourself in the world of words. Whether you prefer the comforting scent of printed pages or the convenience of e-books, Nūlakam is here to cater to your reading preferences. Thank you for joining us on this literary journey. We invite you to explore our shelves, connect with fellow book lovers, and embark on countless literary adventures. Together, let's celebrate the joy of reading and keep the magic of books alive. Discover the world of words with Nūlakam where every book tells a story, and every reader finds a home.
 
-In the project directory, you can run:
+Website: https://nulakam-web-app.vercel.app/
 
-### `npm start`
+&nbsp;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### WebApp
 
-### `npm test`
+Begin by installing node dependencies.
+```bash
+npm i 
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start developmental server
+```bash
+npm start
+```
 
-### `npm run build`
+You should see this in your terminal on successful deployment
+```bash
+Compiled successfully!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can now view admin in the browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Note that the development build is not optimized.  
+To create a production build, use npm run build.   
 
-### `npm run eject`
+webpack compiled successfully
+```
+<b>Important!</b> Create a .env file and place an environment variable called REACT_APP_API_URL = https://localhost:3000/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Check out our [official documentation]() for more information about our [recommended hosting stack]() & properly [Updating Dijkstra](), plus work with [our API]().
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+&nbsp;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Acknowledgements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A big thank you to [DevRev](https://devrev.ai/) for giving me this unique opportunity to try out their hiring hackathon!
 
-## Learn More
+&nbsp;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Copyright & license
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Copyright (c) 2023 JRS Studios - Released under the [MIT license](LICENSE). Dijkstra and the Dijkstra Logo are trademarks of JRS Studios Ltd. 
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+&nbsp; 
