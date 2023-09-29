@@ -1,8 +1,8 @@
 import '../components/Categories/CSS/categories.css';
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import Book from './Book';
-import { getPosts, getPost, getPostsWithTags, searchPosts, getCart } from '../api/post';
-import NotAvailable from '../screens/NotFound';
+import { getPosts, getPostsWithTags, searchPosts, getCart } from '../api/post';
+import CircleLoader from "react-spinners/CircleLoader";
 
 let pageNo = 0;
 const POST_LIMIT = 20;
@@ -18,6 +18,7 @@ const getPaginationCount = (length) => {
 export default function ProductsPage({ title, tagdata, querydata }) {
     const [posts, setPosts] = useState([])
     const [totalPostCount, setTotalPostCount] = useState([])
+    const [loading, setLoading] = useState(true);
 
     const paginationCount = getPaginationCount(totalPostCount);
     const paginationArray = new Array(paginationCount).fill(' ');
@@ -30,8 +31,8 @@ export default function ProductsPage({ title, tagdata, querydata }) {
             setTotalPostCount(postCount);
         } else if (tagdata === 'cart') {
             const { id, cart } = await getCart();
-            setPosts(cart);
-            setTotalPostCount(cart.length);
+            setPosts(cart?cart:[]);
+            setTotalPostCount(cart?cart.length:0);
         } else if (querydata) {
             const { error, posts, postCount } = await searchPosts(querydata, pageNo, POST_LIMIT);
             setPosts(posts);
@@ -44,13 +45,20 @@ export default function ProductsPage({ title, tagdata, querydata }) {
     }
 
     useEffect(() => {
-        fetchPosts()
-        // eslint-disable-next-line
+        async function fetchPostsTemp() {
+            setLoading(true);
+            await fetchPosts();
+            setLoading(false);
+        }
+
+        fetchPostsTemp();
     }, []);
 
-    const fetchMorePosts = (index) => {
+    const fetchMorePosts = async (index) => {
         pageNo = index;
-        fetchPosts()
+        setLoading(true);
+        await fetchPosts();
+        setLoading(false);
     };
     return (
         <section className="main-container">
@@ -73,17 +81,34 @@ export default function ProductsPage({ title, tagdata, querydata }) {
                 </div>
                 <div className="sub-container" id="container">
                     <div className="bottom-box">
-                        {posts.length ? posts.map(post => {
-                            return (<Book key={post.id} post={post} />);
-                        })
-                            : <h1 style={{ color: "227, 85, 8", textAlign: 'center', marginTop: 150 }} > Cart is Empty </h1>
+                        {loading ?
+                            <CircleLoader
+                                color="rgb(227, 85, 8)"
+                                loading={loading}
+                                cssOverride={{ margin: 300, padding: 50 }}
+                                size={45}
+                                aria-label="Loading Spinner"
+                                data-testid="loader"
+                            /> :
+                            posts.length ? posts.map(post => {
+                                return (<Book key={post.id} post={post} />);
+                            })
+                                :
+                                loading ?
+                                    <CircleLoader
+                                        color="rgb(227, 85, 8)"
+                                        loading={loading}
+                                        cssOverride={{ margin: 300, padding: 50 }}
+                                        size={15}
+                                        aria-label="Loading Spinner"
+                                        data-testid="loader"
+                                    />
+                                    :
+                                    <h1 style={{ color: "227, 85, 8", textAlign: 'center', margin: 300, padding: 50 }} > Books Unavailable </h1>
                         }
                     </div>
                 </div>
             </div>
-
-            {/* <div className="end-line"><a onClick={autoScroll}>Top</a></div> */}
-
         </section>
     );
 }

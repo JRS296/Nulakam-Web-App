@@ -4,7 +4,6 @@ import axios from "axios";
 
 // Server Client
 const client = axios.create({baseURL: "https://nulakam.onrender.com/api"}); 
-//const client = axios.create({baseURL: "http://localhost:3000/api"}); //Azure IP
 
 //Dev Client
 //const client = axios.create({baseURL: 'http://localhost:3000/api'});

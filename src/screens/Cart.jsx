@@ -50,7 +50,7 @@ export default function Cart() {
 
                 </section>
 
-                {localStorage.getItem("token") ? <ProductsPage title={"My Cart"} tagdata={"cart"}/> : <h1 style={{color: "227, 85, 8", textAlign: 'center', marginTop: 150 }} > Sign In to View Cart</h1>}
+                {(localStorage.getItem("token")===undefined || !localStorage.getItem("token")) ? <h1 style={{color: "227, 85, 8", textAlign: 'center', marginTop: 150 }} > Sign In to View Cart</h1> : <ProductsPage title={"My Cart"} tagdata={"cart"}/>}
 
                 <div className="footer">
                     <div className="inner-foot">

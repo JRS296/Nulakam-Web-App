@@ -21,7 +21,7 @@ export default function App() {
   useEffect(() => { //Initial Load
     setTimeout(() => {
       setLoading(!loading)
-    }, 1000)
+    }, 1500)
   },[])
 
   return (

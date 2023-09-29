@@ -12,7 +12,7 @@ export default function SearchBar() {
         if (!query.trim()) return;
         navigate(`/search?query=${query}`);
         setQuery("");
-        window. location. reload();
+        window.location.reload();
     }
 
     // const handleReset = (e) => {
